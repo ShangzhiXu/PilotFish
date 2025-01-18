@@ -119,9 +119,7 @@ static void module_load_event(void *drcontext, const module_data_t *mod, bool lo
     if (loaded) {
         drsym_error_t sym_result;
         std::cout << "Module loaded: " << mod->full_path << std::endl;
-//        if (strcmp(mod->full_path, "/home/shangzhixu/shangzhi/RootCauseAnalyzer/gdb_test/RealWorldTest/CVE-2017-14645/Bento4-1.5.0-617/aac2mp4") != 0) {
-//            return;
-//        }
+
 
         sym_result = drsym_enumerate_symbols_ex(mod->full_path, symbol_filter, sizeof(drsym_info_t), (void*)mod->start, DRSYM_DEMANGLE);
         if (sym_result != DRSYM_SUCCESS) {
